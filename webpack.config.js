@@ -1,7 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
 
-var BUILD_DIR = path.resolve(__dirname, 'src/client/public');
+var BUILD_DIR = path.resolve(__dirname, './');
 var APP_DIR = path.resolve(__dirname, 'src/client/app');
 
 var config = {
@@ -11,22 +11,26 @@ var config = {
     filename: 'bundle.js'
   },
   module: {
-  rules: [
-    {
-      test: /\.js$/,
-      exclude: /(node_modules|bower_components)/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: ['env', 'react']
+    rules: [
+        {
+          test: /\.js$/,
+          exclude: /(node_modules|bower_components)/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['env', 'react']
+            }
+          }
+        },
+        {
+          test: /\.css$/,
+          use: [ 'style-loader', 'css-loader' ]
         }
-      }
-    }
-  ]
+    ]
 },
 devServer: {
-     contentBase: './src/client/public',
+     contentBase: './',
    }
 };
 
-module.exports = config;
+module.exports = config ;
