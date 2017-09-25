@@ -1,0 +1,15 @@
+.movies_list, .list{
+	list-style-type: none;
+	padding: 5px;
+	border:1px solid black;
+
+}
+
+.movies_ul{
+
+}
+.container{
+	width:80%;
+	display: block;
+	margin: 0 auto;
+}
